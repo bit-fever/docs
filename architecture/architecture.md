@@ -1,20 +1,6 @@
-# The BitFever Platform
+# Architecture
 
 ## Introduction
-
-**BitFever** is a platform specifically designed for algorithmic trading. The idea is to design a platform that helps
-algo traders to:
-
-- Write trading systems, using a simple IDE and leveraging a programming language specifically designed for trading
-- Run them in a sandbox, taking data from a data provider and executing trades in a broker. All activities will be monitored
-- Manage the portfolio, automatically selecting which systems should be activated and which ones should be deactivated
-
-What you won't find here:
-- All tools needed for a discretionary trader
-
-![screenshot](diagrams/bit-fever.png)
-
-## Components
 
 The platform is designed as a set of microservices and engines. Here is a list them:
 
@@ -40,23 +26,15 @@ have been developed to take advantage of other existing products (like Multichar
 | Strategy metrics export | Multicharts function in PowerLanguage to export daily profits in semi-CSV format    |
 
 
-## Current status
+## Design
 
-The table below summarizes the development status:
+![screenshot](image/bit-fever.png)
 
-| Component             | Status |
-|-----------------------|--------|
-| Gateway               | 100%   |
-| Web user interface    | 10%    |
-| Inventory Server      | 10%    |
-| Portfolio Trader      | 10%    |
-| Data Collector        | 0%     |
-| System Adapter        | 0%     |
-| Shell                 | 10%    |
-| Strategy Fetcher      | 100%   |
-| Keycloak integration  | 100%   |
+![screenshot](image/components.png)
 
 
-## Roadmap
+## Database
 
-A possible roadmap is [here](roadmap.md)
+![Inventory Server](image/inventory-server.png)
+
+![Portfolio Trader](image/portfolio-trader.png)
