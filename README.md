@@ -12,7 +12,6 @@ algo traders to:
 What you won't find here:
 - All tools needed for a discretionary trader
 
-![screenshot](diagrams/bit-fever.png)
 
 ## Components
 
