@@ -36,3 +36,12 @@
 | Realtime trading  | 0%     | Portfolio trader: use Rewind and Sick to run live trading systems                         |
 | Auto on/off       | 0%     | Portfolio trader: activate/deactivate live trading systems depending on their performance |
 | Position sizing   | 0%     | Portfolio trader: add position sizing to a portfolio                                      |
+
+
+## Improvements
+
+- Filter optimization
+  - keep current config
+  - combine filters during optimization
+- Portfolio trading systems
+  - Select multiple TSs to enable/disable them in a single action
