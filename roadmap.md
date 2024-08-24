@@ -1,5 +1,7 @@
 # Roadmap
 
+Here is a possible roadmap for the platform (subject to change).
+
 ## Phase 1
 
 | Feature/component                | Status | Notes                                                                                                                                                           |
@@ -13,12 +15,17 @@
 | Portfolio optimization           | 0%     | Combine rules above to rank trading systems and decide which one should be activated or not                                                                     |
 | Periodic filtering actions       | 0%     | Implement a process that periodically analyzes the trading systems and (say every week) provides a rank result                                                  |
 
+The goal of phase 1 is the ability to:
+- Export metrics (profits, trades, etc...) from another trading platform (like MultiCharts&trade; or Tradestation&trade;)
+- Import these metrics into the platform
+- Assess how the trading systems are behaving
+
 ## Phase 2
 
 | Feature/component        | Status | Notes                                                                                                                                                         |
 |--------------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Data collector           | 10%    | Collect instrument metrics from several sources and stores it locally.<br/>- core data management<br/>- REST API<br/>- UI: data visualization (daily, annual) |
-| BFS data import          | 0%     | BFS command to import ascii metrics into the local adapter                                                                                                    |
+| Data collector           | 100%   | Collect instrument metrics from several sources and stores it locally.<br/>- core data management<br/>- REST API<br/>- UI: data visualization (daily, annual) |
+| UI data import           | 100%   | User interface to import ascii metrics into the local adapter                                                                                                 |
 | System adapter           | 100%   | Adapter component to abstract trading primitives and adapt requests to adapters                                                                               |
 | Local adapter            | 5%     | Adapter to store local metrics exported from other systems                                                                                                    |
 | IB adapter               | 5%     | Adapter for Interactive Brokers                                                                                                                               |
