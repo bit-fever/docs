@@ -1,43 +1,32 @@
-# Starting Keycloak
+# Keycloak setup
 
-You need to pull the `environment` repository.
+## Starting Keycloak
 
-## Starting the database
+You need to pull the `environment` repository and have both Podman and Podman compose packages installed. 
+Once done, enter the `identity-provider` folder and run Podman:
 
 ```
-cd database
-sudo rm -rf keycloak-db
-./start-keycloak-db.sh
+cd identity-provider
+sudo rm -rf database
+mkdir database
+podman compose up -d
 ```
 
 ## Importing the realm
 
-```
-cd identity-provider
-./setup-keycloak.sh
-```
+Go to: https://bitfever-server:8443/auth and login using the default credentials:
+- Username: `keycloak-admin`
+- Password: `key!cloak.2K`
 
-After you see this log:
-```
-Running the server in development mode. DO NOT use this configuration in production.
-```
-
-Press CTRL-C to stop the container. Then:
-
-```
-./start-keycloak.sh
-```
+Click the `Keycloak` dropdown and select `Create realm`. Click `Browse` and upload the `bitfever-realm.json` inside the
+`identity-provider` folder. Now, clicking `Create` the `bitfever` realm will be created.
 
 ## Configuring users
 
-Go to: https://bitfever-server:8443/auth and login using the following credentials:
-- Username: keycloak-admin
-- Password: keycloak#admin
-
 ### Creating a normal user
 
-After login, select the **bitfever** realm. We need to create an admin user (`admin`) and a generic user
-(`user`). Click `Users` on the left and then the "Add user" button. Use the following settings:
+After login, select the `bitfever` realm. We need to create an admin user (`admin`) and a generic user
+(`user`). Click `Users` on the left and then the `Create new user` button. Use the following settings:
 
 - Email verified = yes
 - Username       = user
@@ -46,7 +35,7 @@ After login, select the **bitfever** realm. We need to create an admin user (`ad
 
 Then, click `Create`. Now, on the user tab, click `Credentials` and then `Set password`. Use the following settings:
 - Temporary = Off
-- Password = bf#user
+- Password = `bf#user` (or any other password)
 
 Click `Save` and then the `Save password` button.
 
@@ -55,8 +44,8 @@ Now, click `Role mapping`, then `Assign role` and select the `User` role.
 ### Creating an administrator
 
 Use the same process described above to create the `admin` user. Use:
-- Username       = admin
-- First name     = Admin
-- Last name      = Admin
-- Password = bf#admin
-- Role = admin
+- Username   = admin
+- First name = Admin
+- Last name  = Admin
+- Password   = `bf#admin` (or any other password)
+- Role       = admin
