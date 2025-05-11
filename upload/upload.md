@@ -1,7 +1,8 @@
 ## Downloading data from Tradestation
 
 From the top menu, select `File -> New application -> Chart analysis`. On the chart window that will appear, click the 
-`Data` button and select `Edit symbol` from the menu that will appear, as shown in the image below:
+`Data` button and select `Reload data` from the menu that will appear to reload data for continuous contracts.
+Then, from the same menu select `Edit symbol` , as shown in the image below:
 
 ![screeshot](ts-chart.png)
 
